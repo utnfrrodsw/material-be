@@ -22,7 +22,7 @@ dist/**/*
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
-## local jistory for vscode
+## local history for vscode
 .history/
 
 ## built vscode extensions
