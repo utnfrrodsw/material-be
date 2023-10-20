@@ -1,0 +1,83 @@
+### GET all characters
+http://localhost:3000/api/characters
+
+
+### POST a character
+# @name createVader
+POST http://localhost:3000/api/characters
+Content-Type: application/json
+
+{
+    "name": "Darth Vader",
+    "characterClass": "6531d3f4dc98243fffe841e2",
+    "items": ["6531d4f9dc98243fffe841e7","6531d52cdc98243fffe841e8"],
+    "attack": 25,
+    "mana": 100,
+    "hp": 100,
+    "level": 10
+}
+
+### ID
+@id = {{createVader.response.body.data.id}}
+
+### GET one character
+http://localhost:3000/api/characters/{{id}}
+
+### PUT a character
+PUT http://localhost:3000/api/characters/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Anakin Skywalker",
+  "characterClass": "6531d4aedc98243fffe841e5",
+  "level": 10,
+  "hp": 100,
+  "mana": 50,
+  "attack": 30,
+  "items": ["6531d4f9dc98243fffe841e7"]
+}
+
+### POST a character
+POST http://localhost:3000/api/characters
+Content-Type: application/json
+
+{
+    "name": "Luke Skywalker",
+    "characterClass": "6531d4aadc98243fffe841e4",
+    "items": ["6531d4f9dc98243fffe841e7"],
+    "attack": 20,
+    "mana": 70,
+    "hp": 130,
+    "level": 5
+}
+
+### POST a character
+# @name createCharacterToDelete
+POST http://localhost:3000/api/characters
+Content-Type: application/json
+
+{
+    "name": "Ashoka Tano",
+    "characterClass": "6531d4aadc98243fffe841e4",
+    "items": ["6531d4f9dc98243fffe841e7"],
+    "attack": 20,
+    "mana": 70,
+    "hp": 130,
+    "level": 5
+}
+### DELETE a character
+@idToDelete = {{createCharacterToDelete.response.body.data.id}}
+DELETE http://localhost:3000/api/characters/{{idToDelete}}
+
+### PATCH a character
+PATCH http://localhost:3000/api/characters/{{idToDelete}}
+Content-Type: application/json
+
+{
+  "level": 6,
+  "characterClass":"6531d4aedc98243fffe841e5",
+  "items": ["6531d4f9dc98243fffe841e7"]
+}
+
+### DELETE a character
+DELETE http://localhost:3000/api/characters/{{idToDelete}}

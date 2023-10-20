@@ -1,0 +1,60 @@
+### GET ALL
+GET http://localhost:3000/api/characters/classes
+
+### POST
+# @name createCharacterClass
+POST http://localhost:3000/api/characters/classes
+Content-Type: application/json
+
+{
+    "name": "Lord Sith",
+    "description": "A wielder of the force who has embraced the dark side"
+}
+
+### ID
+@id = {{createCharacterClass.response.body.data.id}}
+
+### GET ONE
+GET http://localhost:3000/api/characters/classes/{{id}}
+
+
+### PUT
+PUT  http://localhost:3000/api/characters/classes/{{id}}
+Content-Type: application/json
+
+{
+    "name": "Lord Sith",
+    "description": "Wielder of the force who has embraced the dark side"
+}
+
+### POST2
+POST http://localhost:3000/api/characters/classes
+Content-Type: application/json
+
+{
+    "name": "Jedi Knight",
+    "description": "Warrior who has dedicated their life to the force and the Jedi order."
+}
+
+### POST3
+POST http://localhost:3000/api/characters/classes
+Content-Type: application/json
+
+{
+    "name": "Fallen Jedi",
+    "description": "A righteous warrior who has fallen to the dark side of the force by embracing their emotions and passions in order to gain power."
+}
+
+### POST CHARACTER TO DELETE
+# @name createCharacterClassToDelete
+POST http://localhost:3000/api/characters/classes
+Content-Type: application/json
+
+{
+    "name": "Fallen Jedi",
+    "description": "A righteous warrior who has fallen to the dark side of the force by embracing their emotions and passions in order to gain power."
+}
+
+### DELETE
+@idToDelete = {{createCharacterClassToDelete.response.body.data.id}}
+DELETE http://localhost:3000/api/characters/classes/{{idToDelete}}
