@@ -45,7 +45,7 @@ Content-Type: application/json
     "description": "A righteous warrior who has fallen to the dark side of the force by embracing their emotions and passions in order to gain power."
 }
 
-### POST CHARACTER TO DELETE
+### POST CHARACTER CLASS TO DELETE
 # @name createCharacterClassToDelete
 POST http://localhost:3000/api/characters/classes
 Content-Type: application/json

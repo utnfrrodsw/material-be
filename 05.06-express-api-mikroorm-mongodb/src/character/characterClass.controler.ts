@@ -1,7 +1,6 @@
 import { Request, Response } from 'express'
 import { orm } from '../shared/db/orm.js'
 import { CharacterClass } from './characterClass.entity.js'
-import { t } from '@mikro-orm/core'
 
 const em = orm.em
 

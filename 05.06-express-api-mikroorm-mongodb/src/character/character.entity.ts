@@ -5,6 +5,7 @@ import {
   Cascade,
   ManyToOne,
   Rel,
+  Collection,
 } from '@mikro-orm/core'
 import { BaseEntity } from '../shared/db/baseEntity.entity.js'
 import { CharacterClass } from './characterClass.entity.js'
@@ -34,5 +35,5 @@ export class Character extends BaseEntity {
     cascade: [Cascade.ALL],
     owner: true,
   })
-  items!: Item[]
+  items = new Collection<Item>(this)
 }
