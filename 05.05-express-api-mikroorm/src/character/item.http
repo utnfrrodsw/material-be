@@ -1,0 +1,54 @@
+### GET ALL
+GET http://localhost:3000/api/items
+
+### POST
+# @name createItem
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+    "name": "Lightsaber",
+    "description": "A gentleman's weapon"
+}
+
+###ID
+@id = {{createItem.response.body.data.id}}
+
+### GET ONE
+GET http://localhost:3000/api/items/{{id}}
+
+### PUT
+PUT http://localhost:3000/api/items/{{id}}
+Content-Type: application/json
+
+{
+    "name": "Lightsaber",
+    "description": "A weapon for a more civilized age"
+}
+
+### POST 2
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+    "name": "Death Star",
+    "description": "Planet killer"
+}
+
+### POST
+# @name createItemToDelete
+POST http://localhost:3000/api/items
+Content-Type: application/json
+
+{
+    "name": "Blaster",
+    "description": "A weapon for a less civilized age"
+}
+
+### DELETE
+@idToDelete = {{createItemToDelete.response.body.data.id}}
+
+DELETE http://localhost:3000/api/items/{{idToDelete}}
+
+
+
